@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="MeetFlow.BLL/MeetFlow_BLL.csproj" Id="00307ff1-efa9-4b5d-a230-0ec61cd51d61" />
+  <Project Path="MeetFlow_API/MeetFlow_API.csproj" />
+  <Project Path="MeetFlow_DAL/MeetFlow_DAL.csproj" Id="9121bd74-8492-42f5-b486-3534fa098877" />
+</Solution>

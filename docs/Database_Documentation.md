@@ -10,7 +10,7 @@ MeetFlow uses **SQL Server** as its relational database management system. The d
 
 > The following Entity Relationship Diagram (ERD) illustrates the database structure and the relationships between entities.
 
-![Database Diagram](database-diagram.png)
+![Database Diagram](images/database-diagram.png)
 
 ---
 

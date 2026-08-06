@@ -407,3 +407,199 @@ Uses AI to analyze meeting notes and generate task suggestions that can later be
 **GET** `/api/tasks/my`
 
 Returns all tasks currently assigned to the authenticated user.
+
+# User Management
+
+The User module enables authenticated users to manage their personal account information, including viewing and updating their profile, changing their password, and deleting their account.
+
+| Method | Endpoint | Authentication | Description |
+|--------|----------|---------------|-------------|
+| GET | `/api/User/me` | Yes | Retrieve the authenticated user's profile information. |
+| PUT | `/api/User/me` | Yes | Update the authenticated user's profile information. |
+| DELETE | `/api/User/me` | Yes | Delete the authenticated user's account. |
+| PUT | `/api/User/change-password` | Yes | Change the authenticated user's password. |
+
+---
+
+## Get Current User
+
+**GET** `/api/User/me`
+
+Returns the profile information of the authenticated user.
+
+### Response
+
+Returns:
+
+- User ID
+- Full Name
+- Email Address
+- Phone Number
+- Account Creation Date
+
+---
+
+## Update Profile
+
+**PUT** `/api/User/me`
+
+Updates the authenticated user's profile information.
+
+### Request Body
+
+| Field | Type | Required | Description |
+|------|------|----------|-------------|
+| fullName | string | Yes | User's full name. |
+| phoneNumber | string | No | User's phone number. |
+
+### Response
+
+Returns the updated user profile.
+
+---
+
+## Change Password
+
+**PUT** `/api/User/change-password`
+
+Changes the authenticated user's password.
+
+### Request Body
+
+| Field | Type | Required | Description |
+|------|------|----------|-------------|
+| currentPassword | string | Yes | Current account password. |
+| newPassword | string | Yes | New password. |
+
+---
+
+## Delete Account
+
+**DELETE** `/api/User/me`
+
+Permanently deletes the authenticated user's account.
+
+---
+
+# Workspace Management
+
+The Workspace module allows users to create, manage, and collaborate within workspaces. It also provides APIs for managing workspace members and their roles.
+
+| Method | Endpoint | Authentication | Description |
+|--------|----------|---------------|-------------|
+| GET | `/api/Workspaces` | Yes | Retrieve all workspaces accessible to the authenticated user. |
+| POST | `/api/Workspaces` | Yes | Create a new workspace. |
+| GET | `/api/Workspaces/{id}` | Yes | Retrieve workspace details. |
+| PUT | `/api/Workspaces/{id}` | Yes | Update workspace information. |
+| DELETE | `/api/Workspaces/{id}` | Yes | Delete a workspace. |
+| GET | `/api/Workspaces/{id}/members` | Yes | Retrieve all workspace members. |
+| POST | `/api/Workspaces/{id}/members` | Yes | Add a new member to the workspace. |
+| PUT | `/api/Workspaces/{id}/members/{userId}/role` | Yes | Update a member's workspace role. |
+| DELETE | `/api/Workspaces/{id}/members/{userId}` | Yes | Remove a member from the workspace. |
+
+---
+
+## Create Workspace
+
+**POST** `/api/Workspaces`
+
+Creates a new workspace.
+
+### Request Body
+
+| Field | Type | Required | Description |
+|------|------|----------|-------------|
+| name | string | Yes | Workspace name. |
+
+### Response
+
+Returns the created workspace, including:
+
+- Workspace ID
+- Workspace Name
+- Creator Information
+- Creation Date
+- Member Count
+- Current User Role
+
+---
+
+## Get Workspaces
+
+**GET** `/api/Workspaces`
+
+Returns all workspaces that the authenticated user belongs to.
+
+---
+
+## Get Workspace Details
+
+**GET** `/api/Workspaces/{id}`
+
+Returns detailed information about a specific workspace.
+
+---
+
+## Update Workspace
+
+**PUT** `/api/Workspaces/{id}`
+
+Updates the workspace name.
+
+### Request Body
+
+| Field | Type | Required |
+|------|------|----------|
+| name | string | Yes |
+
+---
+
+## Delete Workspace
+
+**DELETE** `/api/Workspaces/{id}`
+
+Deletes the specified workspace.
+
+---
+
+## Get Workspace Members
+
+**GET** `/api/Workspaces/{id}/members`
+
+Returns all members within the specified workspace, including their assigned roles.
+
+---
+
+## Add Workspace Member
+
+**POST** `/api/Workspaces/{id}/members`
+
+Adds a new member to the workspace using their email address.
+
+### Request Body
+
+| Field | Type | Required | Description |
+|------|------|----------|-------------|
+| email | string | Yes | Email address of the user to be invited or added. |
+
+---
+
+## Update Member Role
+
+**PUT** `/api/Workspaces/{id}/members/{userId}/role`
+
+Updates the role of an existing workspace member.
+
+### Request Body
+
+| Field | Type | Required | Description |
+|------|------|----------|-------------|
+| role | string | Yes | New role assigned to the workspace member. |
+
+---
+
+## Remove Workspace Member
+
+**DELETE** `/api/Workspaces/{id}/members/{userId}`
+
+Removes the specified member from the workspace.

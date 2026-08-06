@@ -10,6 +10,35 @@ https://localhost:7084/api
 
 ---
 
+# API Modules
+
+The MeetFlow backend is organized into the following functional modules:
+
+| Module | Description |
+|---------|-------------|
+| Authentication | User authentication, authorization, session management, and password recovery. |
+| User Management | Manage user profile, account information, and password. |
+| Workspace Management | Create workspaces and manage members and roles. |
+| Meeting Management | Create, update, and organize meetings. |
+| Meeting Notes | Store and manage meeting notes. |
+| Decision Management | Record and manage meeting decisions. |
+| Task Management | Create, assign, update, and track meeting tasks with AI support. |
+
+---
+
+# Table of Contents
+
+- [Authentication](#authentication)
+- [User Management](#user-management)
+- [Workspace Management](#workspace-management)
+- [Meeting Management](#meeting-management)
+- [Meeting Notes](#meeting-notes)
+- [Decision Management](#decision-management)
+- [Task Management](#task-management)
+
+---
+
+
 # Authentication
 
 The Authentication module is responsible for user registration, login, session management, and password recovery.

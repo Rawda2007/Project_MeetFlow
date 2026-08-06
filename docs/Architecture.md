@@ -8,7 +8,7 @@ MeetFlow follows a layered architecture that separates responsibilities between 
 
 > The following diagram illustrates the overall backend architecture.
 
-![Architecture Diagram](architecture.png)
+![Architecture Diagram](images/architecture.png)
 
 ---
 

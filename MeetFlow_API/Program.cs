@@ -98,6 +98,8 @@ builder.Services.AddScoped<IDecisionService, DecisionService>();
 builder.Services.AddScoped<ITaskService, TaskService>();
 builder.Services.AddHttpClient<IAiTaskExtractionService, GeminiTaskExtractionService>();
 builder.Services.AddHttpClient<IWhatsAppService, WhatsAppService>();
+builder.Services.AddScoped<IDashboardService, DashboardService>();
+
 
 // ---------- Controllers + Swagger ----------
 builder.Services.AddControllers();

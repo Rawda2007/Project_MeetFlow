@@ -31,6 +31,14 @@ namespace MeetFlow_DAL.Repositories
                 .OrderByDescending(m => m.MeetingDate)
                 .ToListAsync();
 
+
+        public Task<List<Meeting>> GetForUserAsync(int userId) =>
+    _db.Meetings
+        .Where(m => m.Workspace.WorkspaceMembers.Any(wm => wm.UserId == userId))
+        .OrderBy(m => m.MeetingDate)
+        .ToListAsync();
+
+
         public Task AddAsync(Meeting meeting)
         {
             _db.Meetings.Add(meeting);

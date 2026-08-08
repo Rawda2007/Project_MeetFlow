@@ -9,6 +9,8 @@ namespace MeetFlow_DAL.Repositories
     {
         Task<Meeting?> GetByIdAsync(int id);
         Task<List<Meeting>> GetForWorkspaceAsync(int workspaceId);
+        Task<List<Meeting>> GetForUserAsync(int userId);
+
         Task AddAsync(Meeting meeting);
         void Remove(Meeting meeting);
     }

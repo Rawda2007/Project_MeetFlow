@@ -43,6 +43,7 @@ namespace MeetFlow.BLL.Services
                 FullName = dto.FullName,
                 Email = dto.Email,
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password),
+                PhoneNumber = dto.PhoneNumber,
                 CreatedAt = DateTime.UtcNow
             };
 
@@ -170,6 +171,7 @@ namespace MeetFlow.BLL.Services
                 UserId = user.Id,
                 FullName = user.FullName,
                 Email = user.Email,
+                PhoneNumber = user.PhoneNumber ?? string.Empty,
                 AccessToken = accessToken,
                 AccessTokenExpiresAt = accessTokenExpiresAt,
                 RefreshToken = refreshTokenValue,
